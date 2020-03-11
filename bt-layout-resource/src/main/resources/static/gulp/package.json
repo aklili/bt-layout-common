@@ -1,0 +1,23 @@
+{
+  "name": "mouseui-resources",
+  "version": "1.0.0",
+  "description": "处理js合并和使用css的scss预编译",
+  "main": "gulpfile.js",
+  "author": "yulao",
+  "license": "MIT",
+  "scripts": {
+    "build": "gulp --config gulpfile.js",
+    "dev": "gulp scss_compile_task"
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 2%"
+  ],
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.0"
+  }
+}

@@ -1,0 +1,25 @@
+.miu-loading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1120;
+  background: #cecece;
+  font-size: 40px;
+  display: none;
+
+  .miu-loading-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    i {
+      color: #007aff;
+      font-size: 42px;
+    }
+  }
+
+}

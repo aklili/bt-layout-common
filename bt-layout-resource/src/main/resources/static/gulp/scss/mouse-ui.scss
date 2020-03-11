@@ -1,0 +1,462 @@
+@charset "utf-8";
+$version: "1.0.0";
+/* version #{$version}. */
+@import './theme/theme-dark.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.miu-layout-container {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.miu-layout-header {
+  display: flex;
+  height: $header-height;
+  background-color: $header-bg-color;
+
+  .miu-layout-header--logo {
+    width: $sider-width;
+    height: 100%;
+  }
+
+  .miu-layout-header--main {
+    flex: 1;
+    display: flex;
+
+    //快捷入口
+    .miu-layout-heder-main__shortcut {
+      flex: 1;
+      display: flex;
+
+      .shortcut-list {
+        display: flex;
+        align-items: center;
+        height: 100%;
+      }
+    }
+
+    .miu-layout-header-main__user {
+      min-width: 420px;
+
+       //用户菜单
+      .user-nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: 100%;
+        margin: 0;
+
+        .item {
+          display: flex;
+          align-items: center;
+          padding: 0 15px;
+          height: 100%;
+          cursor: pointer;
+          transition: all .2s ease-in-out;
+
+          &:hover {
+
+            background-color: #e8e8e8;
+          }
+
+          .user-nav-icon {
+            margin-right: 12px;
+            color: #343a40;
+          }
+        }
+
+        .user-nav-menu,
+        .user-info {
+          margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+        }
+
+        .user-info {
+
+          +.dropdown-menu {
+            width: 150px;
+          }
+
+          .avator {
+            margin-right: 5px;
+            width: 46px;
+            height: 46px;
+          }
+
+          .name {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+.miu-layout-content {
+  position: absolute;
+  top: $header-height;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+
+  //左侧菜单
+  .miu-layout-aside {
+    position: relative;
+    width: $sider-width;
+    height: 100%;
+    background-color: $sider-bg-color;
+
+    .miu-layout-expand {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: $sider-expand-height;
+      background-color: red;
+    }
+  }
+
+  .miu-layout-main {
+    flex: 1;
+    height: 100%;
+    background-color: $layout-main-bg-color;
+  }
+}
+
+.miu-layout-menu-sider {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: $sider-expand-height;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .miu-menu-submenu-title,
+  .miu-menu-item {
+    position: relative;
+    height: $sider-menu-height;
+    line-height: $sider-menu-height;
+    overflow: hidden;
+    font-size: 1em;
+    color: $sider-menu-text-color;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:hover {
+      color: $sider-menu-hover-text-color;
+      text-decoration: none;
+    }
+  }
+
+  .miu-menu-item {
+    display: block;
+    padding-left: 43px;
+
+  }
+
+  .miu-menu-opened {
+    background: $sider-sub-menu-bg-color;
+
+    .miu-menu-submenu-title {
+      background-color: $sider-expand-bg-color;
+    }
+  }
+}
+
+.miu-menu-vertical {
+  .miu-menu-submenu-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: $sider-menu-first;
+    cursor: pointer;
+
+    .arrow {
+      margin-right: 22px;
+    }
+  }
+
+  .miu-menu-item-active {
+    background-color: $sider-menu-active;
+  }
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+    pointer-events: none;
+}
+
+@media screen and (max-width:1440px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+// .miu-layout {
+//   flex: auto;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .miu-layout {
+//   &.layout-has-sider {
+//     flex-direction: row;
+//   }
+// }
+
+// .layout-sider {
+//   width: $sider-width;
+//   height: 100vh;
+//   background-color: $sider-bg-color;
+// }
+
+// .layout-sider-logo {
+//   position: relative;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   color: #fff;
+//   font-size: 16px;
+//   width: 100%;
+//   height: $header-height;
+
+//   &::after {
+//     content: '';
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 1px;
+//     background-color: $sider-logo-split-color;
+//   }
+// }
+
+// .miu-layout-menu-sider {
+
+//   .miu-menu-submenu-title,
+//   .miu-menu-item {
+//     position: relative;
+//     height: $sider-menu-height;
+//     line-height: $sider-menu-height;
+//     overflow: hidden;
+//     color: $sider-menu-text-color;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+
+//     &:hover {
+//       color: $sider-menu-hover-text-color;
+//       text-decoration: none;
+//     }
+//   }
+
+//   .miu-menu-item {
+//     display: block;
+//     padding-left: 43px;
+
+//   }
+
+//   .miu-menu-opened {
+//     background: $sider-sub-menu-bg-color;
+
+//     .miu-menu-submenu-title {
+//       background-color: $sider-expand-bg-color;
+//     }
+//   }
+// }
+
+// .miu-menu-vertical {
+//   .miu-menu-submenu-title {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     padding-left: $sider-menu-first;
+//     cursor: pointer;
+//     transition: all .2s ease-in-out;
+
+//     .arrow {
+//       margin-right: 22px;
+//     }
+//   }
+
+//   .miu-menu-item-active {
+//     background-color: $sider-menu-active;
+//   }
+// }
+
+
+
+// .layout-header {
+//   position: relative;
+//   display: flex;
+//   height: $header-height;
+//   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14);
+//   background-color: $layout-bg-white;
+
+//   &::after {
+//     content: '';
+//     position: absolute;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     height: 1px;
+//     background-color: #E4E4E4;
+//   }
+
+//   .left,
+//   .right {
+//     flex: 1;
+//     display: flex;
+//   }
+
+//   .left {
+//     .expand {
+//       margin-left: 12px;
+//       display: flex;
+//       align-items: center;
+//       width: 42px;
+//       cursor: pointer;
+//       color: #6c757c;
+
+//       &:hover {
+//         color: #343a40;
+//       }
+//     }
+
+//     .breadcrumb {
+//       align-items: center;
+//       height: 100%;
+//       background-color: $layout-bg-white;
+//     }
+//   }
+
+
+
+
+
+// }
+
+// .miu-back-nav {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   display: flex;
+//   align-items: center;
+//   padding: 0 $content-padding;
+//   height: 42px;
+//   background-color: $layout-bg-white;
+
+//   .nav-back {
+//     display: flex;
+//     align-items: center;
+//     height: 100%;
+//     width: 42px;
+
+//     .miu-nav-back-icon {
+//       font-size: 1.5rem;
+//     }
+
+//   }
+
+//   .title {
+//     margin-left: 25px;
+//     font-size: 1rem;
+//     color: #343A40;
+//     font-weight: bold;
+//   }
+// }
+
+// .layout-content {
+//   position: relative;
+//   flex: auto;
+//   background-color: #F2F2F2;
+
+// }
+
+// .miu-main-content {
+//   margin: 20px;
+// }
+
+// .layout-footer {
+//   height: 42px;
+//   background-color: #ccc;
+//   color: red;
+//   font-size: 20px;
+// }
+
+// /*表单样式*/
+// .miu-form {
+//   display: table;
+
+//   .miu-form--item {
+//     display: table-row;
+
+//     .miu-form--label,
+//     .miu-form--controls {
+//       display: table-cell;
+//       vertical-align: top;
+//       padding-bottom: 16px;
+//     }
+
+//     .miu-form--label {
+//       vertical-align: baseline;
+//       color: #6c757d;
+//       padding-right: 20px;
+//       padding-top: 6px;
+//       padding-bottom: 6px;
+//       width: 1px;
+
+//       &.is-required {
+//         label {
+//           &::after {
+//             display: inline-block;
+//             content: "*";
+//             color: #e1504a;
+//             line-height: 1;
+//             position: absolute;
+//             margin: 5px 0 0 3px;
+//           }
+//         }
+//       }
+
+//       label {
+//         display: inline-block;
+//         white-space: nowrap;
+//       }
+//     }
+
+//     .miu-form--controls {
+//       word-break: break-word;
+//       width: 100%;
+
+//       .form-control {
+//         color: #333;
+//       }
+//     }
+//   }
+// }
+
+// .btn {
+//   padding-left: 15px;
+//   padding-right: 15px;
+// }

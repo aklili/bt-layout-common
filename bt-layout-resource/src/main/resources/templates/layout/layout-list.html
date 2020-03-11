@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title layout:title-pattern="$LAYOUT_TITLE">列表页面布局</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+</head>
+
+<body>
+	<div class="miu-layout-list">
+		<div class="miu-layout-form" layout:fragment="form">表单</div>
+		<div class="miu-layout-taable" layout:fragment="table">表格</div>
+	</div>
+	<div layout:fragment="resource"></div>
+</body>
+
+</html>
