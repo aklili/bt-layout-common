@@ -1,6 +1,9 @@
 //头部高度
 $header-height: 50px;
 $header-bg-color: #262F3E;
+//头部导航文字颜色
+$header-nav-text-color: #C1C6C8;
+$header-nav-text-hover: #FFF;
 //logo分割线
 $sider-logo-split-color:#000000;
 //左侧菜单宽度
@@ -12,6 +15,8 @@ $sider-bg-color: #393F44;
 $sider-expand-bg-color: #393F44;
 //子菜单背景色
 $sider-sub-menu-bg-color: #313437;
+//菜单展开时标题颜色
+$sider-open-txt-color:#fff;
 //菜单选中时背景色
 $sider-menu-active: #1E9FFF;
 //菜单高度
@@ -20,6 +25,7 @@ $sider-menu-height: 48px;
 $sider-menu-first: 29px;
 //菜单文字颜色
 $sider-menu-text-color: #BBBBBB;
+//菜单悬浮颜色
 $sider-menu-hover-text-color: #fff;
 
 //白色背景
@@ -28,3 +34,7 @@ $layout-bg-white: #fff;
 $content-padding: 20px;
 //内容背景颜色
 $layout-main-bg-color:#F2F2F2;
+//LOGO文字颜色
+$logo-text-color:#fff;
+//返回导航高度
+$back-nav-height: 52px;

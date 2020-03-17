@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout-back}">
+<head lang="en">
+    <title>添加用户</title>
+</head>
+<body>
+<div layout:fragment="header">
+    <div th:replace="~{fragments/header}"></div>
+</div>
+<div layout:fragment="container">
+    <div layout:fragment="navback" th:replace="~{fragments/navback :: navBack('/form','添加用户')}"></div>
+    <div layout:fragment="content" class="miu-layout-main--content">
+        <div class="miu-layout-main--content__area">
+            <form class="miu-form layui-form"
+                  style="background-color: #fff; width: 100%; padding: 20px;">
+                <div class="miu-form--item">
+                    <div class="miu-form--label text-right is-required">
+                        <label>姓名</label>
+                    </div>
+                    <div class="miu-form--controls">
+                        <input type="text" class="form-control" name="name"
+                               datatype="s5-16" errormsg="昵称至少5个字符,最多16个字符！" /> <small
+                            id="emailHelp" class="form-text text-muted">真实姓名</small>
+                    </div>
+                </div>
+                <div class="miu-form--item">
+                    <div class="miu-form--label text-right is-required">
+                        <label>下拉选项</label>
+                    </div>
+                    <div class="miu-form--controls">
+                        <select name="interest" datatype="*" errormsg="请选择">
+                            <option value=""></option>
+                            <option value="0">写作</option>
+                            <option value="1">阅读</option>
+                            <option value="2">游戏</option>
+                            <option value="3">音乐</option>
+                            <option value="4">旅行</option>
+                        </select>
+                        <small
+                                id="emailHelp" class="form-text text-muted">真实姓名</small>
+                    </div>
+                </div>
+                <div class="miu-form--item">
+                    <div class="miu-form--label text-right is-required">
+                        <label>邮箱</label>
+                    </div>
+                    <div class="miu-form--controls">
+                        <input type="text" class="form-control" name="email"> <small
+                            id="emailHelp" class="form-text text-muted">可接受邮件的邮箱帐号</small>
+                    </div>
+                </div>
+                <div class="miu-form--item">
+                    <div class="miu-form--label text-right is-required">
+                        <label>电话</label>
+                    </div>
+                    <div class="miu-form--controls">
+                        <input type="text" class="form-control" name="tel"> <small
+                            id="emailHelp" class="form-text text-muted">联系电话</small>
+                    </div>
+                </div>
+                <div class="miu-form--item">
+                    <div class="miu-form--label text-right is-required">
+                        <label>联系地址</label>
+                    </div>
+                    <div class="miu-form--controls">
+                        <input type="text" class="form-control" name="address"> <small
+                            id=" emailHelp" class="form-text text-muted">联系地址</small>
+                    </div>
+                </div>
+                <div class="miu-form--item">
+                    <div class="miu-form--label"></div>
+                    <div class="miu-form--controls">
+                        <button type="button" class="btn btn-primary" id="btn_sub">提交</button>
+                        <button type="button" class="btn btn-primary">保存</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" th:src="@{/js/form/valid.js}"></script>
+</div>
+</body>
+</html>

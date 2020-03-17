@@ -1,0 +1,76 @@
+{
+  "code": "200",
+  "data": [
+    {
+      "name": "表单页面",
+      "icon": "layui-icon layui-icon-heart-fill",
+      "level": 1,
+      "id": "1",
+      "list": [
+        {
+          "name": "基础表单",
+          "url": "url_herf",
+          "icon": "layui-icon layui-icon-heart-fill",
+          "level": 2,
+          "id": "1-1"
+        },
+        {
+          "name": "高级表单",
+          "url": "url_herf",
+          "icon": "layui-icon layui-icon-heart-fill",
+          "level": 2,
+          "id": "1-2"
+        },
+        {
+          "name": "表单验证",
+          "url": "url_herf",
+          "icon": "layui-icon layui-icon-heart-fill",
+          "level": 2,
+          "id": "1-3",
+          "list": [
+            {
+              "name": "表单1",
+              "id": "1-3-1",
+              "icon": "layui-icon layui-icon-heart-fill",
+              "level": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "列表页面",
+      "icon": "layui-icon layui-icon-heart-fill",
+      "level": 1,
+      "id": "2",
+      "list": [
+        {
+          "name": "基础列表",
+          "url": "url_herf",
+          "icon": "layui-icon layui-icon-heart-fill",
+          "id": "2-1",
+          "level": 2
+        },
+        {
+          "name": "查询表格",
+          "url": "url_herf",
+          "icon": "layui-icon layui-icon-heart-fill",
+          "id": "2-2",
+          "level": 2
+        },
+        {
+          "name": "带导航返回布局",
+          "url": "url_herf",
+          "icon": "layui-icon layui-icon-heart-fill",
+          "id": "2-3",
+          "level": 2
+        }
+      ]
+    },
+    {
+      "name": "无二级菜单",
+      "id": "3",
+      "level": 1
+    }
+  ]
+}

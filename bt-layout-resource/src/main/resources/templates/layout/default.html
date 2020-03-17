@@ -1,135 +1,35 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-    <head layout:replace=""></head>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title layout:title-pattern="$CONTENT_TITLE">标题</title>
+        <link th:href="@{/webjars/layui/css/layui.css}" type="text/css" rel="stylesheet"/>
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.css}" type="text/css" rel="stylesheet"/>
+        <link th:href="@{/webjars/nprogress/nprogress.css}" type="text/css" rel="stylesheet"/>
+        <link th:href="@{/css/mouse-ui.css}" type="text/css" rel="stylesheet"/>
+        <script type="text/javascript" th:src="@{/webjars/layui/layui.js}"></script>
+        <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script type="text/javascript" th:src="@{/webjars/popper.js/umd/popper.js}"></script>
+        <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.js}"></script>
+        <script type="text/javascript" th:src="@{/webjars/nprogress/nprogress.js}"></script>
+        <script type="text/javascript" th:src="@{/js/libs/pjax/jquery.pjax.js}"></script>
+        <script type="text/javascript" th:src="@{/js/libs/validform/Validform_v5.3.2_min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/app.js}"></script>
+    </head>
     <body>
         <article class="miu-layout-container">
-            <header class="miu-layout-header ">
-                <div class="miu-layout-header--logo">
-                    后台通用模块服务
-                </div>
-                <div class="miu-layout-header--main">
-                    <div class="miu-layout-heder-main__shortcut">
-                        <ul class="shortcut-list">
-                            <li>用户管理</li>
-                            <li>角色管理</li>
-                        </ul>
-                        <div class="shortcut-tools">
-                            <div class="shortcut-btn">
-                                <i class="layui-icon layui-icon-add-1"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="miu-layout-header-main__user">
-                        <ul class="user-nav">
-                            <li class="item">
-                                <i class="layui-icon layui-icon-notice"></i>
-                            </li>
-                            <li class="item">
-                                <i class="layui-icon layui-icon-screen-full"></i>
-                            </li>
-                            <li class="item">
-                                <p class="user-info dropdown-toggle" data-toggle="dropdown">
-                                    <img class="avator" th:src="@{/img/avator.png}"/>
-                                    <span class="name">Mouse UI</span>
-                                </p>
-                                <ul class="dropdown-menu">
-                                    <a class="dropdown-item" th:href="@{/user/show}">
-                                        <i
-                                                class="user-nav-icon layui-icon layui-icon-friends"></i>
-                                        个人信息
-                                    </a>
-                                    <li class="dropdown-item" href="#">
-                                        <i class="user-nav-icon layui-icon layui-icon-password"></i>
-                                        修改密码
-                                    </li>
-                                    <li class="dropdown-item" href="#">
-                                        <i class="user-nav-icon layui-icon layui-icon-fonts-clear"></i>
-                                        清空缓存
-                                    </li>
-                                    <li class="dropdown-divider"></li>
-                                    <li class="dropdown-item">
-                                        <i class="user-nav-icon layui-icon layui-icon-logout"></i>
-                                        退出登录
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="item">
-                                <p class="user-nav-menu  dropdown-toggle" data-toggle="dropdown">
-                                    <i class="layui-icon layui-icon-website"></i>
-                                </p>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-item">简体中文</li>
-                                    <li class="dropdown-item">英文</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </header>
+            <div layout:fragment="header">
+                <!--头部内容-->
+            </div>
             <article class="miu-layout-content">
-                <aside class="miu-layout-aside">
-                    <nav class="miu-layout-menu-sider miu-menu-vertical">
-                        <ul>
-                            <li class="miu-menu-submenu miu-menu-opened">
-                                <div class="miu-menu-submenu-title">
-                                    <div class="title">
-                                        <span class="miu-layout-menu-side-title-icon"></span>
-                                        <span
-                                                class="miu-layout-menu-side-title">表单页面
-                                        </span>
-                                    </div>
-                                    <span class="arrow">
-                                        <i class="layui-icon layui-icon-down"></i>
-                                    </span>
-                                </div>
-                                <ul>
-                                    <li>
-                                        <a href="/form/basic-form" class="miu-menu-item">基础表单</a>
-                                    </li>
-                                    <li>
-                                        <a href="/list" class="miu-menu-item">高级表单</a>
-                                    </li>
-                                    <li>
-                                        <a href="/list" class="miu-menu-item">表单详情</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="miu-menu-submenu miu-menu-opened">
-                                <div class="miu-menu-submenu-title">
-                                    <div class="title">
-                                        <span class="miu-layout-menu-side-title-icon"></span>
-                                        <span
-                                                class="miu-layout-menu-side-title">列表页面
-                                        </span>
-                                    </div>
-                                    <span class="arrow">
-                                        <i class="layui-icon layui-icon-down"></i>
-                                    </span>
-                                </div>
-                                <ul>
-                                    <li>
-                                        <a href="/form" class="miu-menu-item">基础列表</a>
-                                    </li>
-                                    <li>
-                                        <a href="/table/list" class="miu-menu-item">查询表格</a>
-                                    </li>
-                                    <li>
-                                        <a href="/table/back" class="miu-menu-item">带返回导航布局</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="/table" class="miu-menu-item">layout table</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="miu-layout-expand">
-
-                    </div>
-                </aside>
-                <main class="miu-layout-main"></main>
+                <div layout:replace="~{fragments/asider}">
+                    <!--左侧菜单-->
+                </div>
+                <main class="miu-layout-main" layout:fragment="content" id="pjax-fragment">
+                    <!--内容加载区域-->
+                </main>
             </article>
         </article>
     </body>
-
 </html>
